@@ -1,0 +1,73 @@
+@import "../styles/globals.scss";
+
+.container {
+  width: 100%;
+  max-width: $max_width;
+  padding: 32px;
+  margin: 0 auto;
+
+  @include sm {
+    padding: 8px;
+  }
+
+  &__loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__table {
+    width: 100%;
+    color: #2c2c2c;
+
+    th,
+    td {
+      padding: 0 32px;
+      border-bottom: 1px solid #d9d9d9;
+      overflow: hidden;
+
+      @include md {
+        padding: 0 16px;
+      }
+
+      @include sm {
+        padding: 0 4px;
+      }
+    }
+
+    th:nth-of-type(1),
+    td:nth-of-type(1) {
+      text-align: left;
+    }
+    th:nth-of-type(2),
+    td:nth-of-type(2) {
+      text-align: center;
+    }
+    th:nth-of-type(3),
+    td:nth-of-type(3) {
+      text-align: right;
+    }
+
+    thead {
+      tr {
+        height: 48px;
+      }
+
+      th {
+        font-weight: 400;
+        color: #d2d2d2;
+      }
+    }
+
+    tbody {
+      tr {
+        height: 64px;
+      }
+    }
+  }
+}
