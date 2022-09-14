@@ -23,6 +23,7 @@ const HomePage = () => {
       setLoading(true);
       const data = await getData();
       if (data) setData(data);
+
       setLoading(false);
     };
     getResults();
@@ -30,7 +31,7 @@ const HomePage = () => {
 
   const renderResults = () => {
     return data?.map((el, idx) => (
-      <tr key={idx}>
+      <tr key={idx} data-testid="data-row">
         <td>{el.name}</td>
         <td>
           {el.currency} {el.profitLoss}
@@ -43,7 +44,7 @@ const HomePage = () => {
   return (
     <div className={styles.container}>
       {loading ? (
-        <div className={styles.container__loader}>
+        <div className={styles.container__loader} data-testid="spinner">
           <Lottie options={animationOptions} height={400} width={400} />
         </div>
       ) : (
